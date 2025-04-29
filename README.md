@@ -2,13 +2,16 @@
   
 ## Variables
   
-```
+```kotlin
 // 1
 val question = "What's your name?"
 // 2 
 val question: String = "What's your name?"
 // 3 
-var question: String = "What's your name?"```
+var question: String = "What's your name?"
+```
+   
+
 
 val = immuable, doit donc être initialisés, mais pas forcement à la declaration.   
    
