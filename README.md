@@ -30,7 +30,7 @@ print("Hello $name")
 const  précédant le mot-clé  val  nous permet de définir une constante dont la valeur sera connue au moment de la compilation.   
 définir une variable comme étant "initialisable plus tard" dans votre code grâce au mot-clé  lateinit.   
    
-## Fonctions
+## Fonctions ( [Function](https://kotlinlang.org/docs/functions.html) )
    
 ```kotlin
 fun main(args: Array<String>) {
@@ -62,6 +62,42 @@ fun getUrlApi(): String { return "https://www.my.api.com" }
 fun getUrlApi() = "https://www.my.api.com"
 ```
    
+### Paramètres nommés
+```kotlin
+fun displayRepetitiveMessage(message: String, errorMessage: String, repeat: Int, delay: Int, isSilent: Boolean){
+    try{
+        Thread.sleep(delay.toLong());
+        for(i in 0 until repeat) {
+            if (!isSilent) println("$message $i times(s)");
+        }
+    } catch (ex: InterruptedException){
+        println(errorMessage)
+    }
+}
+```
+A l'appel:   
+```kotlin
+displayRepetitiveMessage(message = "Checking network connection...", errorMessage = "Something went wrong!", repeat = 3, delay = 1000, isSilent = false)
+```
+   
+Les parametres nommés peuvent être appelé dans n'importe quel ordre.   
+### Paramètres par défaut
+```kotlin
+fun displayRepetitiveMessage(message: String, errorMessage: String = "Error", repeat: Int = 3, delay: Int = 0, isSilent: Boolean = false)
+```
+   
+A l'appel:   
+```kotlin
+displayRepetitiveMessage("Checking network connection...")
+```
+   
+### Compatibilité avec Java
+```kotlin
+@JvmOverloads
+fun displayRepetitiveMessage(message: String, errorMessage: String = "Error", repeat: Int = 3, delay: Int = 0, isSilent: Boolean = false)
+```
+   
+Car pas de paramètre par défaut en Java.   
 
 ## Class
 
