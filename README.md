@@ -30,7 +30,7 @@ print("Hello $name")
 const  précédant le mot-clé  val  nous permet de définir une constante dont la valeur sera connue au moment de la compilation.   
 définir une variable comme étant "initialisable plus tard" dans votre code grâce au mot-clé  lateinit.   
    
-### Fonctions
+## Fonctions
    
 ```kotlin
 fun main(args: Array<String>) {
