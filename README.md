@@ -29,6 +29,39 @@ print("Hello $name")
    
 const  précédant le mot-clé  val  nous permet de définir une constante dont la valeur sera connue au moment de la compilation.   
 définir une variable comme étant "initialisable plus tard" dans votre code grâce au mot-clé  lateinit.   
+   
+### Fonctions
+   
+```kotlin
+fun main(args: Array<String>) {
+    println("Hello, world!")
+}
+```
+   
+```kotlin
+private fun minOf(a: Int, b: Int): Int {
+    return if (a < b) a else b
+}
+```
+   
+minOf retourne la valeur de la condition, puisque c'est une expression en kotlin.   
+Ce qui pêut s'ecrire:   
+```kotlin
+private fun minOf(a: Int, b: Int): Int = if (a < b) a else b
+```
+   
+L'inference de typer ne fonctionne pas dans le corps d'une fonction:   
+```kotlin
+// 😱
+fun getUrlApi() { return "https://www.my.api.com" }
+
+// 🙂
+fun getUrlApi(): String { return "https://www.my.api.com" }
+
+// 😎
+fun getUrlApi() = "https://www.my.api.com"
+```
+   
 
 ## Class
 
@@ -229,6 +262,10 @@ try{
 // ?: Opérateur Elvis
 val password = user.password ?: throw IllegalArgumentException("Password required")
 ```
+   
+   
+## Nouvelles fonctions
+   
 
    
 
